@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ladies Day — Red Run Golf Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green:   #1B3A2D;
+    --green2:  #2C5940;
+    --green3:  #3A7A56;
+    --pink:    #D4618A;
+    --pink2:   #E8839F;
+    --pink-lt: #fce8f0;
+    --cream:   #FAFAF6;
+    --text:    #1a1a1a;
+    --mid:     #555;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    color: var(--text);
+    background: #fff;
+    overflow-x: hidden;
+  }
+
+  /* ── STICKY NAV ── */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--green);
+    padding: 0 32px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+  }
+  .nav.visible { transform: translateY(0); }
+  .nav-wordmark {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 0.04em;
+  }
+  .nav-sub { font-size: 12px; color: var(--pink2); letter-spacing: 0.12em; text-transform: uppercase; font-family: 'Barlow Condensed', sans-serif; }
+  .nav-cta {
+    background: var(--pink);
+    color: #fff;
+    border: none;
+    padding: 9px 22px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--pink2); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 100%, rgba(212,97,138,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 80% 40% at 20% 20%, rgba(58,122,86,0.4) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--pink2);
+    margin-bottom: 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--pink2);
+    opacity: 0.6;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(56px, 9vw, 110px);
+    font-weight: 700;
+    line-height: 0.95;
+    color: #fff;
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--pink2);
+  }
+
+  .hero-club {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 36px;
+    position: relative;
+  }
+
+  .hero-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(18px, 2.5vw, 26px);
+    color: rgba(255,255,255,0.85);
+    max-width: 580px;
+    line-height: 1.55;
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 52px;
+    position: relative;
+  }
+  .pill {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  .pill.pink {
+    background: rgba(212,97,138,0.25);
+    border-color: var(--pink2);
+    color: var(--pink2);
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--pink);
+    color: #fff;
+    padding: 18px 48px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .hero-cta:hover { background: var(--pink2); transform: translateY(-2px); }
+
+  .hero-price {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    padding: 18px 36px;
+    margin-bottom: 28px;
+    position: relative;
+    text-align: center;
+  }
+  .hero-price-amount {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  .hero-price-amount span {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0;
+  }
+  .hero-price-note {
+    font-size: 13px;
+    color: var(--pink2);
+    margin-top: 6px;
+    letter-spacing: 0.03em;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.35);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 32px;
+    background: rgba(255,255,255,0.25);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse { 0%,100% { opacity:0.3; } 50% { opacity:1; } }
+
+  /* ── ALL MEMBERS BANNER ── */
+  .members-banner {
+    background: var(--pink-lt);
+    border-top: 4px solid var(--pink);
+    border-bottom: 4px solid var(--pink);
+    padding: 36px 24px;
+    text-align: center;
+  }
+  .members-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3.5vw, 36px);
+    color: var(--green);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .members-banner p {
+    font-size: clamp(15px, 1.8vw, 18px);
+    color: var(--mid);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+  .members-banner strong { color: var(--green); }
+
+  /* ── SECTIONS ── */
+  section { padding: 80px 24px; }
+  .container { max-width: 960px; margin: 0 auto; }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight: 700;
+    color: var(--green);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .section-title em { font-style: italic; color: var(--pink); }
+  .section-desc {
+    font-size: 17px;
+    color: var(--mid);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 48px;
+  }
+
+  /* ── SCHEDULE / TIMELINE ── */
+  .schedule-section { background: var(--cream); }
+
+  .timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 88px;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--green3), var(--pink));
+  }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 88px 40px 1fr;
+    align-items: flex-start;
+    gap: 0 16px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .tl-item:last-child { border-bottom: none; }
+
+  .tl-time {
+    text-align: right;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--green);
+    padding-top: 2px;
+    line-height: 1.3;
+  }
+  .tl-time span { display: block; color: var(--mid); font-weight: 400; font-size: 11px; }
+
+  .tl-dot {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .tl-dot-inner {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--green);
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px var(--green);
+  }
+  .tl-dot-inner.pink {
+    background: var(--pink);
+    box-shadow: 0 0 0 2px var(--pink);
+  }
+
+  .tl-body {}
+  .tl-event {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--green);
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+  }
+  .tl-detail {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.55;
+  }
+  .tl-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 3px;
+  }
+  .tag-green { background: var(--green); color: #fff; }
+  .tag-pink { background: var(--pink); color: #fff; }
+  .tag-outline { border: 1px solid var(--green3); color: var(--green2); }
+
+  /* ── WHAT'S INCLUDED ── */
+  .included-section { background: var(--green); }
+  .included-section .section-label { color: var(--pink2); }
+  .included-section .section-title { color: #fff; }
+  .included-section .section-title em { color: var(--pink2); }
+  .included-section .section-desc { color: rgba(255,255,255,0.65); }
+
+  .included-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .included-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 28px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+  .included-card:hover { background: rgba(255,255,255,0.11); }
+  .ic-icon {
+    font-size: 26px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .ic-text {}
+  .ic-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .ic-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.5;
+  }
+
+  /* ── ADD-ONS ── */
+  .addons-section { background: #fff; }
+
+  .addon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .addon-card {
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 28px 24px;
+    position: relative;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .addon-card:hover {
+    border-color: var(--pink);
+    box-shadow: 0 4px 24px rgba(212,97,138,0.12);
+  }
+  .addon-card.featured {
+    border-color: var(--pink);
+    background: var(--pink-lt);
+  }
+  .addon-badge {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: var(--pink);
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 12px;
+    border-radius: 3px;
+  }
+  .addon-icon { font-size: 32px; margin-bottom: 12px; }
+  .addon-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 6px;
+    line-height: 1.25;
+  }
+  .addon-price {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--pink);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .addon-price span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--mid);
+    letter-spacing: 0;
+  }
+  .addon-desc {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+  .addon-slots {
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green2);
+  }
+  .addon-slots::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green3);
+    display: inline-block;
+  }
+
+  /* ── WELLNESS ── */
+  .yoga-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .yoga-slot {
+    background: var(--cream);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--green);
+    font-weight: 600;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.04em;
+  }
+  .yoga-slot span { display: block; color: var(--mid); font-weight: 400; font-size: 13px; margin-top: 2px; }
+
+  /* ── SHOP DROP ── */
+  .shop-section {
+    background: var(--green2);
+    text-align: center;
+    padding: 100px 24px;
+  }
+  .shop-section .section-label { color: var(--pink2); }
+  .shop-section .section-title { color: #fff; }
+  .shop-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--pink);
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 3px;
+    margin-bottom: 28px;
+  }
+  .shop-desc {
+    font-size: clamp(16px, 2vw, 20px);
+    color: rgba(255,255,255,0.75);
+    max-width: 520px;
+    margin: 0 auto 24px;
+    line-height: 1.65;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+  .shop-note {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── GOLF DETAILS ── */
+  .golf-section { background: var(--cream); }
+  .info-box {
+    background: #fff;
+    border-left: 4px solid var(--green3);
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    margin-top: 20px;
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+  .info-box strong { color: var(--green); }
+
+  /* ── EVENING ── */
+  .evening-section {
+    background: linear-gradient(135deg, var(--green) 0%, var(--green2) 100%);
+    text-align: center;
+    padding: 80px 24px;
+  }
+  .evening-section .section-label { color: var(--pink2); }
+  .evening-section .section-title { color: #fff; }
+  .evening-section .section-title em { color: var(--pink2); }
+  .evening-section .section-desc { color: rgba(255,255,255,0.65); margin: 0 auto 48px; }
+
+  .evening-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .ev-card {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 10px;
+    padding: 28px 24px;
+    flex: 1 1 200px;
+    max-width: 220px;
+    text-align: center;
+  }
+  .ev-icon { font-size: 32px; margin-bottom: 10px; }
+  .ev-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .ev-time {
+    font-size: 13px;
+    color: var(--pink2);
+    font-weight: 600;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--pink);
+    padding: 80px 24px;
+    text-align: center;
+  }
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    color: #fff;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .cta-section h2 em { font-style: italic; }
+  .cta-section p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 36px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--pink);
+    padding: 18px 52px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+  .cta-note {
+    margin-top: 20px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--green);
+    padding: 32px 24px;
+    text-align: center;
+    color: rgba(255,255,255,0.35);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+  footer strong { color: rgba(255,255,255,0.7); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 auto 48px;
+    max-width: 400px;
+  }
+  .divider-line { flex: 1; height: 1px; background: rgba(0,0,0,0.1); }
+  .divider-icon { font-size: 18px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .timeline::before { left: 70px; }
+    .tl-item { grid-template-columns: 70px 32px 1fr; }
+    .yoga-row { grid-template-columns: 1fr; }
+    .nav { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- STICKY NAV -->
+<nav class="nav" id="nav">
+  <div>
+    <div class="nav-wordmark">Red Run Golf Club</div>
+    <div class="nav-sub">Ladies Day 2026</div>
+  </div>
+  <span class="nav-cta" style="opacity:0.7;cursor:default;">Registration Coming Soon</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-eyebrow">Red Run Golf Club &nbsp;·&nbsp; May 27th, 2026</div>
+  <h1 class="hero-title"><em>Ladies</em><br>Day</h1>
+  <div class="hero-club">Red Run Golf Club &nbsp;·&nbsp; Tuesday, May 27th &nbsp;·&nbsp; Starting at 1:00 PM</div>
+  <p class="hero-tagline">"Come kick off the start of the season<br>with your Red Run girls."</p>
+  <div class="hero-pills">
+    <span class="pill">Golf · Pool · Shopping</span>
+    <span class="pill pink">Open to ALL Women Members</span>
+    <span class="pill">Pampering · Cocktails · Dinner</span>
+  </div>
+  <div class="hero-price">
+    <div class="hero-price-amount">$55 <span>/ person</span></div>
+    <div class="hero-price-note">Includes welcome drink, chair massages, color analysis &amp; DJ at dinner</div>
+  </div>
+  <a href="#schedule" class="hero-cta">See the Full Day</a>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    scroll
+  </div>
+</section>
+
+<!-- ALL MEMBERS BANNER -->
+<div class="members-banner">
+  <h2>This day is for <em>every</em> woman at Red Run.</h2>
+  <p>
+    <strong>Golf member or social member — you're invited.</strong> Whether you're hitting the course, lounging poolside, treating yourself to a facial, or showing up just for cocktails and dinner — there's a spot for you. Come spend a beautiful day with your club family, meet new faces, and celebrate the start of the season together.
+  </p>
+</div>
+
+<!-- SCHEDULE -->
+<section class="schedule-section" id="schedule">
+  <div class="container">
+    <div class="section-label">Day-of Timeline</div>
+    <h2 class="section-title">The <em>full day,</em> laid out.</h2>
+    <p class="section-desc">Drop in for what excites you or stay all day — either way, you'll leave feeling incredible.</p>
+
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-time">11:00 AM</div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-body">
+          <div class="tl-event">9-Hole Golf</div>
+          <div class="tl-detail">Open to all ladies golf members. Cart fee applies. Tee off and enjoy the course to kick off the season.</div>
+          <div class="tl-tags">
+            <span class="tag tag-green">Golf Members</span>
+            <span class="tag tag-outline">Cart Fee</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">1:00 PM <span>onwards</span></div>
+        <div class="tl-dot"><div class="tl-dot-inner pink"></div></div>
+        <div class="tl-body">
+          <div class="tl-event">Pool Hangout</div>
+          <div class="tl-detail">Relax, float, and soak up the sunshine with your girls. The pool is open all afternoon — stay as long as you like.</div>
+          <div class="tl-tags">
+            <span class="tag tag-pink">All Members</span>
+            <span class="tag tag-outline">Complimentary</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">1:30 PM</div>
+        <div class="tl-dot"><div class="tl-dot-inner pink"></div></div>
+        <div class="tl-body">
+          <div class="tl-event">HIIT Class with Scott</div>
+          <div class="tl-detail">Get your sweat on before the pampering begins. 60 minutes of high-intensity training with Coach Scott.</div>
+          <div class="tl-tags">
+            <span class="tag tag-green">1:30 – 2:30 PM</span>
+            <span class="tag tag-outline">Sign up required</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">1:30 PM</div>
+        <div class="tl-dot"><div class="tl-dot-inner pink"></div></div>
+        <div class="tl-body">
+          <div class="tl-event">Shopping Vendors</div>
+          <div class="tl-detail">Browse a curated selection of vendors — the perfect excuse to treat yourself. Running all afternoon alongside the Pro Shop Exclusive Drop.</div>
+          <div class="tl-tags">
+            <span class="tag tag-pink">All Members</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">1:00 – <span>3:30 PM</span></div>
+        <div class="tl-dot"><div class="tl-dot-inner pink"></div></div>
+        <div class="tl-body">
+          <div class="tl-event">Yoga Sessions</div>
+          <div class="tl-detail">Two sessions available — pick your slot. Bring your own mat. Space is limited, so register early.</div>
+          <div class="yoga-row">
+            <div class="yoga-slot">Session 1<span>1:00 – 1:45 PM</span></div>
+            <div class="yoga-slot">Session 2<span>2:45 – 3:30 PM</span></div>
+          </div>
+          <div class="tl-tags" style="margin-top:12px">
+            <span class="tag tag-pink">$25 / person</span>
+            <span class="tag tag-outline">Bring your own mat</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">Afternoon</div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-body">
+          <div class="tl-event">Wellness & Pampering Pop-Ups</div>
+          <div class="tl-detail">Chair massages, color analysis consults, and mini facials available throughout the afternoon. See the add-ons section below for bookable treatments with pricing.</div>
+          <div class="tl-tags">
+            <span class="tag tag-green">Some complimentary</span>
+            <span class="tag tag-outline">Some add-on</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">5:30 PM</div>
+        <div class="tl-dot"><div class="tl-dot-inner pink"></div></div>
+        <div class="tl-body">
+          <div class="tl-event">Cocktail Hour</div>
+          <div class="tl-detail">Sip, mingle, and wind down from the day. Live DJ sets the tone as the evening begins.</div>
+          <div class="tl-tags">
+            <span class="tag tag-pink">5:30 – 6:30 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">6:30 PM</div>
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-body">
+          <div class="tl-event">Dinner</div>
+          <div class="tl-detail">Sit down for a gorgeous evening dinner with your Red Run girls. DJ keeps the energy alive all night.</div>
+          <div class="tl-tags">
+            <span class="tag tag-green">All Members</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included-section" id="included">
+  <div class="container">
+    <div class="section-label">Included with Your Ticket</div>
+    <h2 class="section-title">$55 <em>per person.</em><br>Here's what you get.</h2>
+    <p class="section-desc">Your ticket covers the good stuff — plus you'll enjoy pool access, shopping vendors, and the Pro Shop exclusive drop as part of the full day.</p>
+
+    <div class="included-grid">
+      <div class="included-card">
+        <div class="ic-icon">🍹</div>
+        <div class="ic-text">
+          <div class="ic-title">Welcome Drink</div>
+          <div class="ic-desc">A complimentary cocktail to kick off the day the right way.</div>
+        </div>
+      </div>
+      <div class="included-card">
+        <div class="ic-icon">💆</div>
+        <div class="ic-text">
+          <div class="ic-title">Chair Massages</div>
+          <div class="ic-desc">Complimentary chair massage sessions throughout the afternoon — no booking needed.</div>
+        </div>
+      </div>
+      <div class="included-card">
+        <div class="ic-icon">🎨</div>
+        <div class="ic-text">
+          <div class="ic-title">Color Analysis Consult</div>
+          <div class="ic-desc">Find out which colors make you glow. A personalized consult included with your ticket.</div>
+        </div>
+      </div>
+      <div class="included-card">
+        <div class="ic-icon">🎵</div>
+        <div class="ic-text">
+          <div class="ic-title">DJ at Dinner</div>
+          <div class="ic-desc">Live DJ all evening — cocktail hour through dinner. Good music, great company.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box" style="margin-top: 28px; border-left-color: var(--pink);">
+      <strong>Also part of the day (no additional charge):</strong> Pool hangout, shopping vendors, Pro Shop exclusive drop, and the HIIT class with Scott. Add-on wellness treatments like yoga, IV drips, Botox, and mini facials are available separately — see below.
+    </div>
+  </div>
+</section>
+
+<!-- PRO SHOP DROP -->
+<section class="shop-section" id="shop">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Pro Shop</div>
+    <div class="shop-eyebrow">⚡ Exclusive Drop — Limited Stock</div>
+    <h2 class="section-title" style="color:#fff; margin-bottom:20px; font-size:clamp(42px,7vw,90px); line-height:1.05;">The one you<br>don't want to miss.</h2>
+    <p class="shop-desc">
+      Our Pro Shop is dropping something special — exclusively for Ladies Day. Limited stock. First come, first served.
+    </p>
+    <p class="shop-note">Details revealed day-of. You'll want to be there early.</p>
+  </div>
+</section>
+
+<!-- ADD-ONS -->
+<section class="addons-section" id="addons">
+  <div class="container">
+    <div class="section-label">Bookable Add-Ons</div>
+    <h2 class="section-title">Treat <em>yourself</em> a little extra.</h2>
+    <p class="section-desc">Reserve your spot for these premium wellness experiences. Slots fill up fast — book when you register.</p>
+
+    <div class="addon-grid">
+
+      <div class="addon-card">
+        <div class="addon-icon">✨</div>
+        <div class="addon-name">Mini Facial</div>
+        <div class="addon-price">Inquire <span>/ session</span></div>
+        <div class="addon-desc">A quick glow-up to keep your skin looking and feeling its best all day (and into dinner).</div>
+        <div class="addon-slots">Available throughout the afternoon</div>
+      </div>
+
+      <div class="addon-card featured">
+        <div class="addon-badge">Popular</div>
+        <div class="addon-icon">💉</div>
+        <div class="addon-name">Meyer's Cocktail IV</div>
+        <div class="addon-price">$199 <span>/ session</span></div>
+        <div class="addon-desc">A classic vitamin and mineral infusion to boost energy, hydration, and immunity — the ultimate afternoon recharge.</div>
+        <div class="addon-slots">20-minute slots · Limited availability</div>
+      </div>
+
+      <div class="addon-card featured">
+        <div class="addon-badge">Best Value</div>
+        <div class="addon-icon">💫</div>
+        <div class="addon-name">Forehead Botox + IV Combo</div>
+        <div class="addon-price">$399 <span>/ session</span></div>
+        <div class="addon-desc">Smooth, refreshed, and rehydrated — the ultimate Ladies Day glow-up package combining Forehead Botox with an IV infusion.</div>
+        <div class="addon-slots">30-minute slots · Limited availability</div>
+      </div>
+
+      <div class="addon-card">
+        <div class="addon-icon">🧘</div>
+        <div class="addon-name">Yoga Session</div>
+        <div class="addon-price">$25 <span>/ person</span></div>
+        <div class="addon-desc">Two sessions to choose from. Bring your own mat. A perfect way to stretch out after golf or before dinner.</div>
+        <div class="yoga-row" style="margin-top:12px">
+          <div class="yoga-slot">Session 1<span>1:00 – 1:45 PM</span></div>
+          <div class="yoga-slot">Session 2<span>2:45 – 3:30 PM</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="info-box" style="margin-top:32px">
+      <strong>Note on IV treatments & Botox:</strong> These are offered by licensed professionals on-site. All bookings are first come, first served and should be reserved in advance. Slots are limited — if you know you want one, reserve it when you sign up.
+    </div>
+  </div>
+</section>
+
+<!-- GOLF DETAILS -->
+<section class="golf-section" id="golf">
+  <div class="container">
+    <div class="section-label">On the Course</div>
+    <h2 class="section-title">Tee off the season <em>right.</em></h2>
+    <p class="section-desc">Our 9-hole round is the perfect way to shake off the winter and get back out there with your golf girls.</p>
+    <div class="info-box">
+      <strong>Who:</strong> Open to all ladies golf members<br>
+      <strong>When:</strong> 11:00 AM tee time<br>
+      <strong>Cost:</strong> Cart fee only — applicable to your member account<br>
+      <strong>Note:</strong> Not a golfer? No problem — the afternoon is packed with activities for all members, golf and social alike.
+    </div>
+  </div>
+</section>
+
+<!-- EVENING -->
+<section class="evening-section" id="evening">
+  <div class="container">
+    <div class="section-label">The Evening</div>
+    <h2 class="section-title">The <em>perfect</em> ending.</h2>
+    <p class="section-desc">After a full day of fun, pampering, and shopping, we close it out the right way — cocktails, great food, and dancing.</p>
+
+    <div class="evening-cards">
+      <div class="ev-card">
+        <div class="ev-icon">🍸</div>
+        <div class="ev-title">Cocktail Hour</div>
+        <div class="ev-time">5:30 – 6:30 PM</div>
+      </div>
+      <div class="ev-card">
+        <div class="ev-icon">🍽️</div>
+        <div class="ev-title">Dinner</div>
+        <div class="ev-time">Starting 6:30 PM</div>
+      </div>
+      <div class="ev-card">
+        <div class="ev-icon">🎵</div>
+        <div class="ev-title">Live DJ</div>
+        <div class="ev-time">All evening long</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="register">
+  <h2>Ready to join your<br><em>Red Run girls?</em></h2>
+  <p>$55 per person. Registration details coming soon — watch for the link from the club.</p>
+  <div class="cta-btn" style="background:rgba(255,255,255,0.25);cursor:default;display:inline-block;padding:18px 52px;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;letter-spacing:0.15em;text-transform:uppercase;color:#fff;border:2px solid rgba(255,255,255,0.5);">Registration Coming Soon</div>
+  <p class="cta-note">Questions? Contact the Pro Shop or Club Administration.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Red Run Golf Club</strong> &nbsp;·&nbsp; Ladies Day 2026 &nbsp;·&nbsp; Open to All Women Members
+</footer>
+
+<script>
+  // sticky nav
+  const nav = document.getElementById('nav');
+  const hero = document.querySelector('.hero');
+  const observer = new IntersectionObserver(([e]) => {
+    nav.classList.toggle('visible', !e.isIntersecting);
+  }, { threshold: 0.1 });
+  observer.observe(hero);
+</script>
+
+</body>
+</html>
