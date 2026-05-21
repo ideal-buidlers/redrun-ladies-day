@@ -535,6 +535,40 @@
     color: var(--mid);
     line-height: 1.6;
   }
+  .addon-signup {
+    display: block;
+    margin-top: 16px;
+    text-align: center;
+    background: var(--green);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    opacity: 0.75;
+    cursor: default;
+  }
+  .tl-signup {
+    display: inline-block;
+    margin-top: 12px;
+    background: var(--green);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    opacity: 0.75;
+    cursor: default;
+  }
+
   .addon-slots {
     margin-top: 10px;
     display: inline-flex;
@@ -767,14 +801,13 @@
   <div class="hero-guest-banner">
     <span class="hero-guest-icon">🌸</span>
     Guests Welcome!
-    <span class="hero-guest-sub">Pool · Shopping · Pampering · Cocktails · Dinner<br><em>Golf is members only</em></span>
+    <span class="hero-guest-sub">Pool · Shopping · Pampering · Cocktails · Dinner<br><em>Golf is for Red Run social or golf members only</em></span>
   </div>
   <div class="hero-pills">
     <span class="pill">Golf · Pool · Shopping</span>
     <span class="pill pink">Open to ALL Women Members</span>
     <span class="pill">Pampering · Cocktails · Dinner</span>
   </div>
-  <a href="#schedule" class="hero-cta">See the Full Day</a>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
     scroll
@@ -854,15 +887,15 @@
         <div class="tl-dot"><div class="tl-dot-inner pink"></div></div>
         <div class="tl-body">
           <div class="tl-event">Yoga Sessions</div>
-          <div class="tl-detail">Two sessions available — pick your slot. Bring your own mat. Space is limited, so register early.</div>
+          <div class="tl-detail">Two sessions available — pick your slot. Space is limited, so sign up early.</div>
           <div class="yoga-row">
             <div class="yoga-slot">Session 1<span>1:00 – 1:45 PM</span></div>
             <div class="yoga-slot">Session 2<span>2:45 – 3:30 PM</span></div>
           </div>
           <div class="tl-tags" style="margin-top:12px">
             <span class="tag tag-pink">$25 / person</span>
-            <span class="tag tag-outline">Bring your own mat</span>
           </div>
+          <a href="#" class="tl-signup">Sign Up Now — Link Coming Soon</a>
         </div>
       </div>
 
@@ -923,7 +956,7 @@
 <section class="included-section" id="included">
   <div class="container">
     <div class="section-label">Included with Your Ticket</div>
-    <h2 class="section-title">$50++ <em>per person.</em><br>Here's what you get.</h2>
+    <h2 class="section-title">$50++ <em>per person.</em><br>DJ & Dinner included.</h2>
     <p class="section-desc">Your ticket covers the good stuff — plus you'll enjoy pool access, shopping vendors, and the Pro Shop exclusive drop as part of the full day.</p>
 
     <div class="included-grid">
@@ -957,9 +990,6 @@
       </div>
     </div>
 
-    <div class="info-box" style="margin-top: 28px; border-left-color: var(--pink);">
-      <strong>Also part of the day (no additional charge):</strong> Pool hangout, shopping vendors, Pro Shop exclusive drop, and the HIIT class with Scott. Add-on wellness treatments like yoga, IV drips, Botox, and mini facials are available separately — see below.
-    </div>
   </div>
 </section>
 
@@ -991,6 +1021,7 @@
         <div class="addon-price">$40 <span>/ session</span></div>
         <div class="addon-desc">A quick glow-up to keep your skin looking and feeling its best all day (and into dinner).</div>
         <div class="addon-slots">Available throughout the afternoon</div>
+        <a href="#" class="addon-signup">Sign Up — Link Coming Soon</a>
       </div>
 
       <div class="addon-card featured">
@@ -1000,6 +1031,7 @@
         <div class="addon-price">$199 <span>/ session</span></div>
         <div class="addon-desc">A classic vitamin and mineral infusion to boost energy, hydration, and immunity — the ultimate afternoon recharge.</div>
         <div class="addon-slots">20-minute slots · Limited availability</div>
+        <a href="#" class="addon-signup">Sign Up — Link Coming Soon</a>
       </div>
 
       <div class="addon-card featured">
@@ -1009,17 +1041,19 @@
         <div class="addon-price">$399 <span>/ session</span></div>
         <div class="addon-desc">Smooth, refreshed, and rehydrated — the ultimate Ladies Day glow-up package combining Forehead Botox with an IV infusion.</div>
         <div class="addon-slots">30-minute slots · Limited availability</div>
+        <a href="#" class="addon-signup">Sign Up — Link Coming Soon</a>
       </div>
 
       <div class="addon-card">
         <div class="addon-icon">🧘</div>
         <div class="addon-name">Yoga Session</div>
         <div class="addon-price">$25 <span>/ person</span></div>
-        <div class="addon-desc">Two sessions to choose from. Bring your own mat. A perfect way to stretch out after golf or before dinner.</div>
+        <div class="addon-desc">Two sessions to choose from. A perfect way to stretch out before dinner.</div>
         <div class="yoga-row" style="margin-top:12px">
           <div class="yoga-slot">Session 1<span>1:00 – 1:45 PM</span></div>
           <div class="yoga-slot">Session 2<span>2:45 – 3:30 PM</span></div>
         </div>
+        <a href="#" class="addon-signup">Sign Up — Link Coming Soon</a>
       </div>
 
     </div>
@@ -1030,20 +1064,6 @@
   </div>
 </section>
 
-<!-- GOLF DETAILS -->
-<section class="golf-section" id="golf">
-  <div class="container">
-    <div class="section-label">On the Course</div>
-    <h2 class="section-title">Tee off the season <em>right.</em></h2>
-    <p class="section-desc">Our 9-hole round is the perfect way to shake off the winter and get back out there with your golf girls.</p>
-    <div class="info-box">
-      <strong>Who:</strong> Open to all ladies golf members<br>
-      <strong>When:</strong> 11:00 AM tee time<br>
-      <strong>Cost:</strong> Cart fee only — applicable to your member account<br>
-      <strong>Note:</strong> Not a golfer? No problem — the afternoon is packed with activities for all members, golf and social alike.
-    </div>
-  </div>
-</section>
 
 <!-- EVENING -->
 <section class="evening-section" id="evening">
