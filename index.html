@@ -176,6 +176,38 @@
     color: var(--pink2);
   }
 
+  .hero-guest-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: rgba(212,97,138,0.2);
+    border: 2px solid var(--pink2);
+    border-radius: 12px;
+    padding: 20px 36px;
+    margin-bottom: 28px;
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 1.1;
+  }
+  .hero-guest-icon { font-size: 0.7em; }
+  .hero-guest-sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: clamp(13px, 1.5vw, 16px);
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+  }
+  .hero-guest-sub em {
+    font-style: italic;
+    color: var(--pink2);
+  }
+
   .hero-cta {
     display: inline-block;
     background: var(--pink);
@@ -723,7 +755,7 @@
     <div class="nav-wordmark">Red Run Golf Club</div>
     <div class="nav-sub">Ladies Day 2026</div>
   </div>
-  <span class="nav-cta" style="opacity:0.7;cursor:default;">Registration Coming Soon</span>
+  <span class="nav-cta" style="opacity:0.7;cursor:default;">Reserve Your Spot — Link Coming Soon</span>
 </nav>
 
 <!-- HERO -->
@@ -732,14 +764,15 @@
   <h1 class="hero-title"><em>Ladies</em><br>Day</h1>
   <div class="hero-club">Red Run Golf Club &nbsp;·&nbsp; Tuesday, May 27th &nbsp;·&nbsp; Starting at 1:30 PM</div>
   <p class="hero-tagline">"Come kick off the start of the season<br>with your Red Run girls."</p>
+  <div class="hero-guest-banner">
+    <span class="hero-guest-icon">🌸</span>
+    Guests Welcome!
+    <span class="hero-guest-sub">Pool · Shopping · Pampering · Cocktails · Dinner<br><em>Golf is members only</em></span>
+  </div>
   <div class="hero-pills">
     <span class="pill">Golf · Pool · Shopping</span>
     <span class="pill pink">Open to ALL Women Members</span>
     <span class="pill">Pampering · Cocktails · Dinner</span>
-  </div>
-  <div class="hero-price">
-    <div class="hero-price-amount">$50++ <span>/ person</span></div>
-    <div class="hero-price-note">Includes welcome drink, chair massages, color analysis &amp; DJ at dinner</div>
   </div>
   <a href="#schedule" class="hero-cta">See the Full Day</a>
   <div class="hero-scroll">
